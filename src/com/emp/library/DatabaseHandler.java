@@ -62,6 +62,24 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.insert(TABLE_LOGIN, null, values);
         db.close(); // Closing database connection
     }
+    
+    /**
+     * Storing user details in database
+     * */
+    //public void addUser(String fname, String lname, String email, String uname, String uid, String created_at) {
+    public void addUser1(String email, String uname, String uid, String created_at) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        //values.put(KEY_FIRSTNAME, fname); // FirstName
+        //values.put(KEY_LASTNAME, lname); // LastName
+        //values.put(KEY_EMAIL, email); // Email
+        values.put(KEY_USERNAME, uname); // UserName
+        values.put(KEY_UID, uid); // Email
+        values.put(KEY_CREATED_AT, created_at); // Created At
+        // Inserting Row
+        db.insert(TABLE_LOGIN, null, values);
+        db.close(); // Closing database connection
+    }
     /**
      * Getting user data from database
      * */

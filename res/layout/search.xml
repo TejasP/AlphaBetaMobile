@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" >
+	 
+  <!-- Header aligned to top -->
+  <RelativeLayout
+      android:id="@+id/header"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentTop="true"
+      android:background="#FFFFFF"
+      android:gravity="center" >
+
+      <TextView
+          android:id="@+id/textView1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="5dp"
+          android:text=""
+          android:textColor="#000"
+          android:textSize="20sp" />
+
+      <ImageView
+          android:id="@+id/item_image"
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:layout_alignParentRight="true"
+          android:layout_alignParentTop="true"
+          android:layout_marginRight="22dp"
+          android:src="@drawable/ic_launcher" />
+
+  </RelativeLayout>
+	 
+  <!-- Footer aligned to bottom -->
+  <RelativeLayout
+    android:id="@+id/footer"
+        android:layout_width="fill_parent"
+    android:layout_height="40dip"
+    android:background="@layout/footer_repeat"
+    android:layout_alignParentBottom="true">
+  <!--   android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="#FFFFFF"
+    android:gravity="center" >-->
+
+    
+     <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/ic_launcher" />    
+    
+    <ImageView
+        android:id="@+id/item_image1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/item_image"
+        android:src="@drawable/ic_launcher" />    
+    
+    <ImageView
+        android:id="@+id/item_image2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/item_image1"
+        android:src="@drawable/ic_launcher" />
+    
+     <ImageView
+        android:id="@+id/item_image3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/item_image2"
+        android:src="@drawable/ic_launcher" />
+    
+  </RelativeLayout>
+ 
+  <!-- Scrollable Item below header and above footer -->
+  <ScrollView 
+    android:id="@+id/scrollableContents"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_above="@id/footer"
+    android:background="#FFFFFF"
+    android:layout_below="@id/header">    
+     
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:padding="10dip" >
+        
+        <!--  Seach TextField -->
+        <EditText
+            android:id="@+id/inputSearch"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#80DAEB"
+            android:textColor="#000000" 
+            android:hint="Search products...."/>
+   <RelativeLayout
+    android:id="@+id/footer5"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+        <!--  Login Button -->       
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:background="#000000"
+            android:textColor="#FFFFFF"
+            android:text="Search" />                
+         
+        <!--  Error message -->
+
+        <TextView
+            android:id="@+id/search_error"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="22dp"
+            android:layout_toRightOf="@+id/btnSearch"
+            android:padding="10dip"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+ 
+    </RelativeLayout>                   
+
+    </LinearLayout>
+     
+  </ScrollView>
+  
+</RelativeLayout>
